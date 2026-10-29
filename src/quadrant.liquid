@@ -1,0 +1,12 @@
+
+<div class="layout layout--col layout--center">
+  <span class="value value--large">{{ icao }}</span>
+  {% assign p0 = periods | first %}
+  {% if p0 %}
+    <span class="label">{{ p0.wind }}</span>
+    <span class="label label--small">{{ p0.vis }} · {{ p0.clouds }}</span>
+  {% endif %}
+</div>
+<div class="title_bar">
+  <span class="title">TAF</span>
+</div>

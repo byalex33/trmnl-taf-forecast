@@ -1,0 +1,17 @@
+
+<div class="layout layout--col gap--xsmall">
+  <span class="title title--small">{{ icao }}</span>
+  <span class="description" data-clamp="1">{{ raw }}</span>
+  {% for p in periods limit:2 %}
+    <div class="item">
+      <div class="content">
+        <span class="title title--small">{{ p.label }} {{ p.from }}</span>
+        <span class="label label--small">{{ p.wind }} · {{ p.vis }} · {{ p.clouds }}</span>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+<div class="title_bar">
+  <span class="title">TAF</span>
+  <span class="instance">{{ icao }}</span>
+</div>

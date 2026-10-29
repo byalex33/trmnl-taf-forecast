@@ -1,0 +1,14 @@
+---
+watch:
+  - .trmnlp.yml
+  - src
+custom_fields:
+  icao: "EGSH"
+time_zone: Europe/London
+transform_runtime: enabled
+variables:
+  trmnl:
+    user:
+      name: Alex Baldry
+    plugin_settings:
+      instance_name: EGSH Norwich

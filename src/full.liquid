@@ -1,0 +1,25 @@
+
+<div class="layout layout--col gap--small">
+  <div>
+    <span class="title">{{ icao }}{% if name %} · {{ name }}{% endif %}</span>
+    <span class="label label--small">Issued {{ issued }}</span>
+    <div class="description" data-clamp="2">{{ raw }}</div>
+  </div>
+  <div class="grid grid--cols-1 gap--xsmall">
+    {% for p in periods %}
+      <div class="item">
+        <div class="meta">
+          <span class="index">{{ p.label }}</span>
+        </div>
+        <div class="content">
+          <span class="title title--small">{{ p.label }} · {{ p.from }} → {{ p.to }}</span>
+          <span class="description">{{ p.wind }} · Vis {{ p.vis }} · {{ p.clouds }}{% if p.wx != "—" %} · {{ p.wx }}{% endif %}</span>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+<div class="title_bar">
+  <span class="title">TAF</span>
+  <span class="instance">{{ icao }}</span>
+</div>

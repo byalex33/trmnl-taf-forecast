@@ -1,0 +1,31 @@
+---
+name: TAF Forecast
+description: Decoded aerodrome TAF
+strategy: polling
+polling_verb: get
+polling_url: https://aviationweather.gov/api/data/taf?ids={{ icao }}&format=json
+polling_headers: |
+  User-Agent: trmnl-taf/1.0 (byalex33)
+refresh_interval: 60
+no_screen_padding: 'no'
+dark_mode: 'no'
+serverless_language: python
+recipe_overview: |
+  Terminal Aerodrome Forecast (TAF) for one or more ICAO airports via the
+  aviationweather.gov Data API. Shows the raw TAF string plus decoded periods
+  (time window, wind, visibility, cloud, weather, and FM/TEMPO/BECMG/PROB groups).
+  No API key. Default example EGSH (Norwich) near Ipswich.
+custom_fields:
+  - keyname: icao
+    field_type: string
+    name: ICAO code(s)
+    description: One ICAO airport code, or comma-separated (e.g. EGSH,EGLL).
+    placeholder: EGSH
+    default: EGSH
+    maxlength: 32
+  - keyname: about
+    name: About This Plugin
+    field_type: author_bio
+    category: travel,nature
+    description: Built by Alex Baldry. Data from aviationweather.gov (NOAA/NWS).
+    github_url: https://github.com/byalex33
